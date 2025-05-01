@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  pull_request:
+    paths:
+      - src/**
+      - tests/**
+
+permissions: write-all
+
+jobs:
+  lint-and-format:
+    name: lint-and-format
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install PDM
+        run: curl -sSL https://raw.githubusercontent.com/pdm-project/pdm/main/install-pdm.py | python3 -
+      - name: Add path for PDM
+        run: echo "$HOME/.local/bin" >> $GITHUB_PATH
+      - name: Install dependencies
+        run: pdm install
+      - name: Run Format
+        run: pdm format
+      - name: Run Lint
+        run: pdm lint
+      - name: Auto commit with Formatter
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Apply Code Formatter Change
+
+  test-and-coverage-report:
+    name: test-and-coverage-report
+    needs: lint-and-format
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install PDM
+        run: curl -sSL https://raw.githubusercontent.com/pdm-project/pdm/main/install-pdm.py | python3 -
+      - name: Add path for PDM
+        run: echo "$HOME/.local/bin" >> $GITHUB_PATH
+      - name: Install dependencies
+        run: pdm install
+      - name: Run Test
+        run: pdm run test --junitxml=pytest.xml
+      - name: Run Test with Coverage
+        run: pdm run test --junitxml=pytest.xml --cov-report=term-missing:skip-covered | tee pytest-coverage.txt
+      - name: Create Coverage Comment
+        id: coverageComment
+        uses: MishaKav/pytest-coverage-comment@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          pytest-coverage-path: ./pytest-coverage.txt
+          junitxml-path: ./pytest.xml
