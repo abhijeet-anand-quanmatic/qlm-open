@@ -90,11 +90,11 @@ We are determined to develop unique algorithm solutions and promote the early us
 - Courses:
   - "Introduction to Quantum Computing"
   - "Quantum Machine Learning"
-- Xanadu: [https://www.xanadu.ai/](https://www.xanadu.ai/)
-- PennyLane: [https://pennylane.ai/qml/](https://pennylane.ai/qml/)
-
+- Xanadu: 
+- PennyLane:
+  
 ### ANCAR
-- Web app for learning annealing machines: [https://ancar.app](https://ancar.app)
+- Web app for learning annealing machines: 
 - Tutorials, simulations, and advanced modes for multiple machines:
   - D-Wave 2000Q / Advantage
   - Digital Annealer
