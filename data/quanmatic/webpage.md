@@ -1,10 +1,10 @@
 # QUANMATIC
 
 ## Company Overview
-- **Company Name:** Quanmatic Inc.  
-- **Established:** October 2022  
-- **Representative Director:** Sumitaka Koga  
-- **Location:** 1-22-3 Nishi-Waseda, Shinjuku-ku, Tokyo 169-0051  
+- **Company Name:** Quanmatic Inc.
+- **Established:** October 2022
+- **Representative Director:** Sumitaka Koga
+- **Location:** 1-22-3 Nishi-Waseda, Shinjuku-ku, Tokyo 169-0051
 
 ## Vision
 - We will establish and promote a new decision-making method utilizing cutting-edge large-scale computing technology such as quantum computing and deep business knowledge.
@@ -17,7 +17,7 @@ Bringing quantum technology to the world through the power of algorithms.
 
 Currently, three of the top five companies in the world by market capitalization (AWS/Google/Microsoft as of July 2023) and other world-leading companies and research institutes are competing to develop quantum computers. While hardware is a hot topic, it is also an industry in which the onboard software and algorithms directly determine the quality of solutions to the real world.
 
-In this context, we recognized that algorithms and the technology that links them to real-world problems are essential for the early use of quantum computers, and founded the company with a management team of members with a wide range of expertise in quantum physics, information engineering, software engineering, and business development. 
+In this context, we recognized that algorithms and the technology that links them to real-world problems are essential for the early use of quantum computers, and founded the company with a management team of members with a wide range of expertise in quantum physics, information engineering, software engineering, and business development.
 
 We are determined to develop unique algorithm solutions and promote the early use of quantum technology, so we are just starting out as a company, but we appreciate your support.
 
@@ -90,11 +90,11 @@ We are determined to develop unique algorithm solutions and promote the early us
 - Courses:
   - "Introduction to Quantum Computing"
   - "Quantum Machine Learning"
-- Xanadu: 
+- Xanadu:
 - PennyLane:
-  
+
 ### ANCAR
-- Web app for learning annealing machines: 
+- Web app for learning annealing machines:
 - Tutorials, simulations, and advanced modes for multiple machines:
   - D-Wave 2000Q / Advantage
   - Digital Annealer
